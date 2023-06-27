@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Json.SystemTextJson</name>
+    </assembly>
+    <members>
+        <member name="T:Volo.Abp.Json.SystemTextJson.JsonConverters.ObjectToInferredTypesConverter">
+            <summary>
+            https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-converters-how-to#deserialize-inferred-types-to-object-properties
+            </summary>
+        </member>
+    </members>
+</doc>

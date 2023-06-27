@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.IdentityModel</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.GrantType">
+            <summary>
+            Possible values: "client_credentials" or "password".
+            Default value: "client_credentials".
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.ClientId">
+            <summary>
+            Client Id.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.ClientSecret">
+            <summary>
+            Client secret (as plain text - without hashed).
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.UserName">
+            <summary>
+            User name.
+            Valid only if <see cref="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.GrantType"/> is "password".
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.UserPassword">
+            <summary>
+            Password of the <see cref="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.UserName"/>.
+            Valid only if <see cref="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.GrantType"/> is "password".
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.Authority">
+            <summary>
+            Authority.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.Scope">
+            <summary>
+            Scope.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.RequireHttps">
+            <summary>
+            RequireHttps.
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.CacheAbsoluteExpiration">
+            <summary>
+            Absolute expiration duration (as seconds) for the access token cache.
+            Default: 1800 seconds (30 minutes)
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.ValidateIssuerName">
+            <summary>
+            ValidateIssuerName.
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.IdentityModel.IdentityClientConfiguration.ValidateEndpoints">
+            <summary>
+            ValidateEndpoints.
+            Default: true.
+            </summary>
+        </member>
+    </members>
+</doc>

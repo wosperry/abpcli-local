@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Json.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.Json.AbpJsonOptions.InputDateTimeFormats">
+            <summary>
+            Formats of input JSON date, Empty string means default format.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Json.AbpJsonOptions.OutputDateTimeFormat">
+            <summary>
+            Format of output json date, Null or empty string means default format.
+            </summary>
+        </member>
+    </members>
+</doc>

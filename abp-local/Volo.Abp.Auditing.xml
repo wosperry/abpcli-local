@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Auditing</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.HideErrors">
+            <summary>
+            If this value is true, auditing will not throw an exceptions and it will log it when an error occurred while saving AuditLog.
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.IsEnabled">
+            <summary>
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.ApplicationName">
+            <summary>
+            The name of the application or service writing audit logs.
+            Default: null.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.IsEnabledForAnonymousUsers">
+            <summary>
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.AlwaysLogOnException">
+            <summary>
+            Audit log on exceptions.
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.IsEnabledForIntegrationServices">
+            <summary>
+            Disables/enables audit logging for integration services.
+            Default: false.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.IsEnabledForGetRequests">
+            <summary>
+            Default: false.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.AbpAuditingOptions.DisableLogActionInfo">
+            <summary>
+            Default: false.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Auditing.EntityChangeInfo.EntityTenantId">
+            <summary>
+            TenantId of the related entity.
+            This is not the TenantId of the audit log entry.
+            There can be multiple tenant data changes in a single audit log entry.
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Auditing.EntityPropertyChangeInfo.MaxPropertyNameLength">
+            <summary>
+            Maximum length of <see cref="P:Volo.Abp.Auditing.EntityPropertyChangeInfo.PropertyName"/> property.
+            Value: 96.
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Auditing.EntityPropertyChangeInfo.MaxValueLength">
+            <summary>
+            Maximum length of <see cref="P:Volo.Abp.Auditing.EntityPropertyChangeInfo.NewValue"/> and <see cref="P:Volo.Abp.Auditing.EntityPropertyChangeInfo.OriginalValue"/> properties.
+            Value: 512.
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Auditing.EntityPropertyChangeInfo.MaxPropertyTypeFullNameLength">
+            <summary>
+            Maximum length of <see cref="P:Volo.Abp.Auditing.EntityPropertyChangeInfo.PropertyTypeFullName"/> property.
+            Value: 512.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.Auditing.IEntityHistorySelectorList.RemoveByName(System.String)">
+            <summary>
+            Removes a selector by name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

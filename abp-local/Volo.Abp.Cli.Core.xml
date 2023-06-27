@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Cli.Core</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.Cli.AbpCliOptions.CacheTemplates">
+            <summary>
+            Default value: true.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.AbpCliOptions.ToolName">
+            <summary>
+            Default value: "CLI".
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.Cli.Build.DefaultChangedProjectFinder.FindAllProjects(Volo.Abp.Cli.Build.DotNetProjectBuildConfig)">
+            <summary>
+            Returns list of projects in a repository and its depending repositories sorted by dependencies
+            </summary>
+            <param name="buildConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Volo.Abp.Cli.Build.GitRepository">
+            <summary>
+            Represents a source code repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepository.Name">
+            <summary>
+            Name of the repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepository.BranchName">
+            <summary>
+            Branch of the repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepository.RootPath">
+            <summary>
+            Root path of the repository which contains .git folder
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepositoryBuildStatus.RepositoryName">
+            <summary>
+            Name of the repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepositoryBuildStatus.BranchName">
+            <summary>
+            Branch of the repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepositoryBuildStatus.CommitId">
+            <summary>
+            Last succeeded commitId of the repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepositoryBuildStatus.SucceedProjects">
+            <summary>
+            Build succeeded projects of this repository
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Cli.Build.GitRepositoryBuildStatus.DependingRepositories">
+            <summary>
+            Build status of depending repositories
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.App.AppNoLayersProTemplate.TemplateName">
+            <summary>
+            "app-nolayers-pro".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.App.AppNoLayersTemplate.TemplateName">
+            <summary>
+            "app-nolayers".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.App.AppTemplate.TemplateName">
+            <summary>
+            "app".
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.Cli.ProjectBuilding.Templates.App.AppTemplateChangeConsoleTestClientPortSettingsStep.#ctor(System.String,System.String)">
+            <param name="remoteServicePort"></param>
+            <param name="authServerPort">Assumed same as the <paramref name="remoteServicePort"/> if leaved as null.</param>
+        </member>
+        <member name="M:Volo.Abp.Cli.ProjectBuilding.Templates.App.AppTemplateChangeDbMigratorPortSettingsStep.#ctor(System.String)">
+            <param name="authServerPort"></param>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.Console.ConsoleTemplate.TemplateName">
+            <summary>
+            "console".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.Maui.MauiTemplate.TemplateName">
+            <summary>
+            "maui".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.Microservice.MicroserviceProTemplate.TemplateName">
+            <summary>
+            "microservice-pro".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.Microservice.MicroserviceServiceProTemplate.TemplateName">
+            <summary>
+            "microservice-service-pro".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.MvcModule.ModuleProTemplate.TemplateName">
+            <summary>
+            "module".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.MvcModule.ModuleTemplate.TemplateName">
+            <summary>
+            "module".
+            </summary>
+        </member>
+        <member name="F:Volo.Abp.Cli.ProjectBuilding.Templates.Wpf.WpfTemplate.TemplateName">
+            <summary>
+            "wpf".
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.Cli.Utils.GlobalToolHelper.IsGlobalToolInstalled(System.String)">
+            <summary>
+            Checks whether the tool is installed or not.
+            </summary>
+            <param name="toolCommandName">Eg: For AbpSuite tool it's "abp-suite", for ABP CLI tool it's "abp"</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.BackgroundWorkers</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.BackgroundWorkers.AbpBackgroundWorkerOptions.IsEnabled">
+            <summary>
+            Default: true.
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.BackgroundWorkers.BackgroundWorkerBase">
+            <summary>
+            Base class that can be used to implement <see cref="T:Volo.Abp.BackgroundWorkers.IBackgroundWorker"/>.
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.BackgroundWorkers.BackgroundWorkerManager">
+            <summary>
+            Implements <see cref="T:Volo.Abp.BackgroundWorkers.IBackgroundWorkerManager"/>.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.BackgroundWorkers.BackgroundWorkerManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Volo.Abp.BackgroundWorkers.BackgroundWorkerManager"/> class.
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.BackgroundWorkers.IBackgroundWorker">
+            <summary>
+            Interface for a worker (thread) that runs on background to perform some tasks.
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.BackgroundWorkers.IBackgroundWorkerManager">
+            <summary>
+            Used to manage background workers.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.BackgroundWorkers.IBackgroundWorkerManager.AddAsync(Volo.Abp.BackgroundWorkers.IBackgroundWorker,System.Threading.CancellationToken)">
+            <summary>
+            Adds a new worker. Starts the worker immediately if <see cref="T:Volo.Abp.BackgroundWorkers.IBackgroundWorkerManager"/> has started.
+            </summary>
+            <param name="worker">
+            The worker. It should be resolved from IOC.
+            </param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="T:Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase">
+            <summary>
+            Extends <see cref="T:Volo.Abp.BackgroundWorkers.BackgroundWorkerBase"/> to add a periodic running Timer.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerBase.DoWork(Volo.Abp.BackgroundWorkers.PeriodicBackgroundWorkerContext)">
+            <summary>
+            Periodic works should be done by implementing this method.
+            </summary>
+        </member>
+    </members>
+</doc>

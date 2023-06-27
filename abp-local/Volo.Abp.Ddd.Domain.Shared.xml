@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Ddd.Domain.Shared</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.Domain.Entities.Events.Distributed.IEntityEto`1.Id">
+            <summary>
+            Unique identifier for this entity.
+            </summary>
+        </member>
+    </members>
+</doc>

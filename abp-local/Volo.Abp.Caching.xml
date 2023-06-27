@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.Caching</name>
+    </assembly>
+    <members>
+        <member name="P:Volo.Abp.Caching.AbpDistributedCacheOptions.HideErrors">
+            <summary>
+            Throw or hide exceptions for the distributed cache.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Caching.AbpDistributedCacheOptions.KeyPrefix">
+            <summary>
+            Cache key prefix.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Caching.AbpDistributedCacheOptions.GlobalCacheEntryOptions">
+            <summary>
+            Global Cache entry options.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.Caching.AbpDistributedCacheOptions.CacheConfigurators">
+            <summary>
+            List of all cache configurators.
+            (func argument:Name of cache)
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.Caching.DistributedCache`1">
+            <summary>
+            Represents a distributed cache of <typeparamref name="TCacheItem" /> type.
+            </summary>
+            <typeparam name="TCacheItem">The type of cache item being cached.</typeparam>
+        </member>
+        <member name="T:Volo.Abp.Caching.DistributedCache`2">
+            <summary>
+            Represents a distributed cache of <typeparamref name="TCacheItem" /> type.
+            Uses a generic cache key type of <typeparamref name="TCacheKey" /> type.
+            </summary>
+            <typeparam name="TCacheItem">The type of cache item being cached.</typeparam>
+            <typeparam name="TCacheKey">The type of cache key being used.</typeparam>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.Get(`1,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Gets a cache item with the given key. If no cache item is found for the given key then returns null.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <returns>The cache item, or null.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.GetAsync(`1,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets a cache item with the given key. If no cache item is found for the given key then returns null.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The cache item, or null.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.GetOrAdd(`1,System.Func{`0},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Gets or Adds a cache item with the given key. If no cache item is found for the given key then adds a cache item
+            provided by <paramref name="factory" /> delegate and returns the provided cache item.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache item when no cache item is found for the given <paramref name="key" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <returns>The cache item.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.GetOrAddAsync(`1,System.Func{System.Threading.Tasks.Task{`0}},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets or Adds a cache item with the given key. If no cache item is found for the given key then adds a cache item
+            provided by <paramref name="factory" /> delegate and returns the provided cache item.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache item when no cache item is found for the given <paramref name="key" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The cache item.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.Set(`1,`0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Sets the cache item value for the provided key.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="value">The cache item value to set in the cache.</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.SetAsync(`1,`0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Sets the cache item value for the provided key.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="value">The cache item value to set in the cache.</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.Refresh(`1,System.Nullable{System.Boolean})">
+            <summary>
+            Refreshes the cache value of the given key, and resets its sliding expiration timeout.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.RefreshAsync(`1,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Refreshes the cache value of the given key, and resets its sliding expiration timeout.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.Remove(`1,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Removes the cache item for given key from cache.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.DistributedCache`2.RemoveAsync(`1,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Removes the cache item for given key from cache.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="T:Volo.Abp.Caching.IDistributedCache`1">
+            <summary>
+            Represents a distributed cache of <typeparamref name="TCacheItem" /> type.
+            </summary>
+            <typeparam name="TCacheItem">The type of cache item being cached.</typeparam>
+        </member>
+        <member name="T:Volo.Abp.Caching.IDistributedCache`2">
+            <summary>
+            Represents a distributed cache of <typeparamref name="TCacheItem" /> type.
+            Uses a generic cache key type of <typeparamref name="TCacheKey" /> type.
+            </summary>
+            <typeparam name="TCacheItem">The type of cache item being cached.</typeparam>
+            <typeparam name="TCacheKey">The type of cache key being used.</typeparam>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.Get(`1,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Gets a cache item with the given key. If no cache item is found for the given key then returns null.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <returns>The cache item, or null.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetMany(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean},System.Boolean)">
+             <summary>
+             Gets multiple cache items with the given keys.
+            
+             The returned list contains exactly the same count of items specified in the given keys.
+             An item in the return list can not be null, but an item in the list has null value
+             if the related key not found in the cache.
+             </summary>
+             <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+             <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+             <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+             <returns>List of cache items.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetManyAsync(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+             <summary>
+             Gets multiple cache items with the given keys.
+            
+             The returned list contains exactly the same count of items specified in the given keys.
+             An item in the return list can not be null, but an item in the list has null value
+             if the related key not found in the cache.
+            
+             </summary>
+             <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+             <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+             <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+             /// <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+             <returns>List of cache items.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetAsync(`1,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets a cache item with the given key. If no cache item is found for the given key then returns null.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The cache item, or null.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetOrAdd(`1,System.Func{`0},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Gets or Adds a cache item with the given key. If no cache item is found for the given key then adds a cache item
+            provided by <paramref name="factory" /> delegate and returns the provided cache item.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache item when no cache item is found for the given <paramref name="key" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <returns>The cache item.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetOrAddAsync(`1,System.Func{System.Threading.Tasks.Task{`0}},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets or Adds a cache item with the given key. If no cache item is found for the given key then adds a cache item
+            provided by <paramref name="factory" /> delegate and returns the provided cache item.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache item when no cache item is found for the given <paramref name="key" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The cache item.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetOrAddMany(System.Collections.Generic.IEnumerable{`1},System.Func{System.Collections.Generic.IEnumerable{`1},System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`0}}},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Gets or Adds multiple cache items with the given keys. If any cache items not found for the given keys then adds cache items
+            provided by <paramref name="factory" /> delegate and returns the provided cache items.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache items when no cache items are found for the given <paramref name="keys" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <returns>The cache items.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.GetOrAddManyAsync(System.Collections.Generic.IEnumerable{`1},System.Func{System.Collections.Generic.IEnumerable{`1},System.Threading.Tasks.Task{System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{`1,`0}}}},System.Func{Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions},System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Gets or Adds multiple cache items with the given keys. If any cache items not found for the given keys then adds cache items
+            provided by <paramref name="factory" /> delegate and returns the provided cache items.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="factory">The factory delegate is used to provide the cache items when no cache items are found for the given <paramref name="keys" />.</param>
+            <param name="optionsFactory">The cache options for the factory delegate.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The cache items.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.Set(`1,`0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Sets the cache item value for the provided key.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="value">The cache item value to set in the cache.</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.SetAsync(`1,`0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Sets the cache item value for the provided key.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="value">The cache item value to set in the cache.</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.SetMany(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`1,`0}},Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Sets multiple cache items.
+            Based on the implementation, this can be more efficient than setting multiple items individually.
+            </summary>
+            <param name="items">Items to set on the cache</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.SetManyAsync(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`1,`0}},Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Sets multiple cache items.
+            Based on the implementation, this can be more efficient than setting multiple items individually.
+            </summary>
+            <param name="items">Items to set on the cache</param>
+            <param name="options">The cache options for the value.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.Refresh(`1,System.Nullable{System.Boolean})">
+            <summary>
+            Refreshes the cache value of the given key, and resets its sliding expiration timeout.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RefreshAsync(`1,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Refreshes the cache value of the given key, and resets its sliding expiration timeout.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RefreshMany(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean})">
+            <summary>
+            Refreshes the cache value of the given keys, and resets their sliding expiration timeout.
+            Based on the implementation, this can be more efficient than setting multiple items individually.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RefreshManyAsync(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+            Refreshes the cache value of the given keys, and resets their sliding expiration timeout.
+            Based on the implementation, this can be more efficient than setting multiple items individually.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.Remove(`1,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Removes the cache item for given key from cache.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RemoveAsync(`1,System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Removes the cache item for given key from cache.
+            </summary>
+            <param name="key">The key of cached item to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RemoveMany(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Removes the cache items for given keys from cache.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+        </member>
+        <member name="M:Volo.Abp.Caching.IDistributedCache`2.RemoveManyAsync(System.Collections.Generic.IEnumerable{`1},System.Nullable{System.Boolean},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Removes the cache items for given keys from cache.
+            </summary>
+            <param name="keys">The keys of cached items to be retrieved from the cache.</param>
+            <param name="hideErrors">Indicates to throw or hide the exceptions for the distributed cache.</param>
+            <param name="considerUow">This will store the cache in the current unit of work until the end of the current unit of work does not really affect the cache.</param>
+            <param name="token">The <see cref="T:System.Threading.CancellationToken" /> for the task.</param>
+            <returns>The <see cref="T:System.Threading.Tasks.Task" /> indicating that the operation is asynchronous.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Volo.Abp.EventBus</name>
+    </assembly>
+    <members>
+        <member name="T:Volo.Abp.EventBus.ActionEventHandler`1">
+            <summary>
+            This event handler is an adapter to be able to use an action as <see cref="T:Volo.Abp.EventBus.ILocalEventHandler`1"/> implementation.
+            </summary>
+            <typeparam name="TEvent">Event type</typeparam>
+        </member>
+        <member name="P:Volo.Abp.EventBus.ActionEventHandler`1.Action">
+            <summary>
+            Function to handle the event.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.EventBus.ActionEventHandler`1.#ctor(System.Func{`0,System.Threading.Tasks.Task})">
+            <summary>
+            Creates a new instance of <see cref="T:Volo.Abp.EventBus.ActionEventHandler`1"/>.
+            </summary>
+            <param name="handler">Action to handle the event</param>
+        </member>
+        <member name="M:Volo.Abp.EventBus.ActionEventHandler`1.HandleEventAsync(`0)">
+            <summary>
+            Handles the event.
+            </summary>
+            <param name="eventData"></param>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.CleanOldEventTimeIntervalSpan">
+            <summary>
+            Default: 6 hours
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.InboxWaitingEventMaxCount">
+            <summary>
+            Default: 1000
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.OutboxWaitingEventMaxCount">
+            <summary>
+            Default: 1000
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.PeriodTimeSpan">
+            <summary>
+            Period time of <see cref="T:Volo.Abp.EventBus.Distributed.InboxProcessor"/> and <see cref="T:Volo.Abp.EventBus.Distributed.OutboxSender"/>
+            Default: 2 seconds
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.DistributedLockWaitDuration">
+            <summary>
+            Default: 15 seconds
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.WaitTimeToDeleteProcessedInboxEvents">
+            <summary>
+            Default: 2 hours
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Distributed.AbpEventBusBoxesOptions.BatchPublishOutboxEvents">
+            <summary>
+            Default: true
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Distributed.LocalDistributedEventBus.Subscribe``1(Volo.Abp.EventBus.Distributed.IDistributedEventHandler{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Subscribe``1(System.Func{``0,System.Threading.Tasks.Task})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Subscribe``2">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Subscribe(System.Type,Volo.Abp.EventBus.IEventHandler)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Subscribe``1(Volo.Abp.EventBus.IEventHandlerFactory)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Unsubscribe``1(Volo.Abp.EventBus.ILocalEventHandler{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.Unsubscribe``1(Volo.Abp.EventBus.IEventHandlerFactory)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.UnsubscribeAll``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.UnsubscribeAll(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.PublishAsync``1(``0,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.EventBusBase.PublishAsync(System.Type,System.Object,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Volo.Abp.EventBus.EventHandlerFactoryUnregistrar">
+            <summary>
+            Used to unregister a <see cref="T:Volo.Abp.EventBus.IEventHandlerFactory"/> on <see cref="M:Volo.Abp.EventBus.EventHandlerFactoryUnregistrar.Dispose"/> method.
+            </summary>
+        </member>
+        <member name="T:Volo.Abp.EventBus.IocEventHandlerFactory">
+            <summary>
+            This <see cref="T:Volo.Abp.EventBus.IEventHandlerFactory"/> implementation is used to get/release
+            handlers using Ioc.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.EventBus.IocEventHandlerFactory.GetHandler">
+            <summary>
+            Resolves handler object from Ioc container.
+            </summary>
+            <returns>Resolved handler object</returns>
+        </member>
+        <member name="T:Volo.Abp.EventBus.Local.LocalEventBus">
+            <summary>
+            Implements EventBus as Singleton pattern.
+            </summary>
+        </member>
+        <member name="P:Volo.Abp.EventBus.Local.LocalEventBus.Logger">
+            <summary>
+            Reference to the Logger.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.Subscribe``1(Volo.Abp.EventBus.ILocalEventHandler{``0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.Subscribe(System.Type,Volo.Abp.EventBus.IEventHandlerFactory)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.Unsubscribe``1(System.Func{``0,System.Threading.Tasks.Task})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.Unsubscribe(System.Type,Volo.Abp.EventBus.IEventHandler)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.Unsubscribe(System.Type,Volo.Abp.EventBus.IEventHandlerFactory)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Volo.Abp.EventBus.Local.LocalEventBus.UnsubscribeAll(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Volo.Abp.EventBus.SingleInstanceHandlerFactory">
+            <summary>
+            This <see cref="T:Volo.Abp.EventBus.IEventHandlerFactory"/> implementation is used to handle events
+            by a single instance object. 
+            </summary>
+            <remarks>
+            This class always gets the same single instance of handler.
+            </remarks>
+        </member>
+        <member name="P:Volo.Abp.EventBus.SingleInstanceHandlerFactory.HandlerInstance">
+            <summary>
+            The event handler instance.
+            </summary>
+        </member>
+        <member name="M:Volo.Abp.EventBus.SingleInstanceHandlerFactory.#ctor(Volo.Abp.EventBus.IEventHandler)">
+            <summary>
+            
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="T:Volo.Abp.EventBus.TransientEventHandlerFactory`1">
+            <summary>
+            This <see cref="T:Volo.Abp.EventBus.IEventHandlerFactory"/> implementation is used to handle events
+            by a transient instance object. 
+            </summary>
+            <remarks>
+            This class always creates a new transient instance of the handler type.
+            </remarks>
+        </member>
+        <member name="T:Volo.Abp.EventBus.TransientEventHandlerFactory">
+            <summary>
+            This <see cref="T:Volo.Abp.EventBus.IEventHandlerFactory"/> implementation is used to handle events
+            by a transient instance object. 
+            </summary>
+            <remarks>
+            This class always creates a new transient instance of the handler type.
+            </remarks>
+        </member>
+        <member name="M:Volo.Abp.EventBus.TransientEventHandlerFactory.GetHandler">
+            <summary>
+            Creates a new instance of the handler object.
+            </summary>
+            <returns>The handler object</returns>
+        </member>
+    </members>
+</doc>
